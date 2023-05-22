@@ -265,8 +265,8 @@ void over() {
 void userDefinedWords() {
   test('can consist of built-in words', () {
     var forth = Forth();
-    forth.evaluate(': dup-twice dup dup ;');
-    forth.evaluate('1 dup-twice');
+    forth.evaluate(': duptwice dup dup ;');
+    forth.evaluate('1 duptwice');
     expect(forth.stack, equals(<int>[1, 1, 1]));
   }, skip: true);
 
@@ -285,7 +285,7 @@ void userDefinedWords() {
     expect(forth.stack, equals(<int>[1, 1, 1]));
   }, skip: true);
 
-  test('can override built-in words', () {
+  test('can override built-in words', () { 
     var forth = Forth();
     forth.evaluate(': swap dup ;');
     forth.evaluate('1 swap');
